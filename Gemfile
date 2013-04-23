@@ -9,11 +9,6 @@ gem 'sqlite3'
 
 gem 'json'
 
-#Production
-group :production do
-	gem 'pg'
-end
-
 #Development
 group :development, :test do
 	gem 'sqlite3'
