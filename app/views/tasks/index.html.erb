@@ -5,7 +5,7 @@
     <th>Title</th>
     <th>Description</th>
     <th>Estimate</th>
-    <th></th>
+    <th>Status</th>
     <th></th>
     <th></th>
   </tr>
@@ -15,6 +15,7 @@
     <td><%= task.title %></td>
     <td><%= task.description %></td>
     <td><%= task.estimate %></td>
+    <td><%= task.status %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
     <!-- <td><%= link_to 'Destroy', task, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>-->
