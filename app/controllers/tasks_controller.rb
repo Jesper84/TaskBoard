@@ -3,6 +3,11 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
+    @readytasks = Task.where(:status => 1)
+    @progresstasks = Task.where(:status => 2)
+    @completedtasks = Task.where(:status => 3)
+    @testedtasks = Task.where(:status => 4)
+    @deployedtasks = Task.where(:status => 5)
 
     respond_to do |format|
       format.html # index.html.erb

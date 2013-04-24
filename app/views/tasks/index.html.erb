@@ -1,28 +1,57 @@
-<h1>Listing tasks</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Estimate</th>
-    <th>Status</th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.title %></td>
-    <td><%= task.description %></td>
-    <td><%= task.estimate %></td>
-    <td><%= task.status %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <!-- <td><%= link_to 'Destroy', task, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>-->
-  </tr>
-<% end %>
-</table>
-
-<br />
-
+<h1>Taskboard!</h1>
 <%= link_to 'New Task', new_task_path %>
+
+<div id="divTasks">
+  <div class="center">
+    <table class="taskTable">
+      <tbody>
+        <tr >
+          <th style="width: 250px;">Ready</th>
+          <th style="width: 250px;">In progress</th>
+          <th style="width: 250px;">Complete</th>
+          <th style="width: 250px;">Tested</th>
+          <th style="width: 250px;">Deployed</th>
+        </tr>
+        <tr style="width: 100px; text-align:center;">
+          <td id="colRdy" class="colRdy">
+            
+            <% @readytasks.each do |task| %>
+              <div class="dragme">
+                <%= task.title %>
+              </div>
+            <%end%>
+            
+          </td>
+          <td id="colProg" class="colProg">
+            <% @progresstasks.each do |task| %>
+              <div class="dragme">
+                <%= task.title %>
+              </div>
+            <%end%>
+          </td>
+          <td id="colCompl" class="colCompl">
+            <% @completedtasks.each do |task| %>
+              <div class="dragme">
+                <%= task.title %>
+              </div>
+            <%end%>
+          </td>
+          <td id="colTest" class="colTest">
+            <% @testedtasks.each do |task| %>
+              <div class="dragme">
+                <%= task.title %>
+              </div>
+            <%end%>
+          </td>
+          <td id="colDepl" class="colDepl">
+            <% @deployedtasks.each do |task| %>
+              <div class="dragme">
+                <%= task.title %>
+              </div>
+            <%end%>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
