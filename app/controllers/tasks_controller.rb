@@ -74,6 +74,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def update_position
+    @task = Task.find(params[:id])
+    newstatus = params[:newstatus]
+  end
+
+
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy

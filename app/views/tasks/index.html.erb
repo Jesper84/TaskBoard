@@ -16,7 +16,7 @@
           <td id="colRdy" class="colRdy">
             
             <% @readytasks.each do |task| %>
-              <div class="dragme">
+              <div class="dragme" id="<%=task.id%>">
                 <%= task.title %>
               </div>
             <%end%>
@@ -24,28 +24,28 @@
           </td>
           <td id="colProg" class="colProg">
             <% @progresstasks.each do |task| %>
-              <div class="dragme">
+              <div class="dragme" id="<%=task.id%>">
                 <%= task.title %>
               </div>
             <%end%>
           </td>
           <td id="colCompl" class="colCompl">
             <% @completedtasks.each do |task| %>
-              <div class="dragme">
+              <div class="dragme" id="<%=task.id%>">
                 <%= task.title %>
               </div>
             <%end%>
           </td>
           <td id="colTest" class="colTest">
             <% @testedtasks.each do |task| %>
-              <div class="dragme">
+              <div class="dragme" id="<%=task.id%>">
                 <%= task.title %>
               </div>
             <%end%>
           </td>
           <td id="colDepl" class="colDepl">
             <% @deployedtasks.each do |task| %>
-              <div class="dragme">
+              <div class="dragme" id="<%=task.id%>">
                 <%= task.title %>
               </div>
             <%end%>

@@ -7,6 +7,8 @@ Taskboard::Application.routes.draw do
 
   match '/task/new' => 'tasks#new'
 
+  match 'task/update/status/:newstatus' => 'tasks#update_position'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
