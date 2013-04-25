@@ -74,9 +74,16 @@ class TasksController < ApplicationController
     end
   end
 
+  #PUT /task/update/status
   def update_position
-    @task = Task.find(params[:id])
-    newstatus = params[:newstatus]
+    task = Task.find(params[:id])
+    newstatus = params[:status]
+    logger.debug(newstatus)
+    task.status = newstatus
+    task.save
+    respond_to do |format|
+      format.html {redirect_to tasks_url}
+    end
   end
 
 

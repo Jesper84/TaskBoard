@@ -20,7 +20,19 @@ $(function(){
 				newstatusId = 5;
 			}
 			
-			$.get('/task/update/status', {newstatus:newstatusId})
+			var droppedItemId = ui.draggable.attr('id');
+			var updateUrl = '/task/'+droppedItemId+'/update/status';
+			$.ajax({
+				url: updateUrl,
+				data: {id: droppedItemId,status:newstatusId},
+				type: 'PUT',
+				success: function(){
+					console.log('Updated status');
+				},
+				error: function(){
+					console.log('Error updating status');
+				}
+			});
 		},
 		tolerance: 'intersect'
 		

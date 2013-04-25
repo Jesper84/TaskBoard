@@ -5,9 +5,12 @@ Taskboard::Application.routes.draw do
   resources :tasks
   root :to => 'tasks#index'
 
+  match '/tasks/' => 'tasks#index'
+
   match '/task/new' => 'tasks#new'
 
-  match 'task/update/status/:newstatus' => 'tasks#update_position'
+
+  match '/task/:id/update/status' => 'tasks#update_position'
 
 
   # The priority is based upon order of creation:
